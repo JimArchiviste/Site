@@ -49,9 +49,17 @@ $( document ).ready( function(){
 
 	$('#slideleft').click(function() {
 		var $lefty = $(this).prev().children('.selected_slide');
+		var $right = $lefty.next();
+		$right.show();
 		$lefty.animate({
 			left : "-3000"
-		});
+		}, 1200000000);
+		
+		$lefty.hide();
+		$right.animate({
+                        left : "0"
+                });
+
 	});
 
 
