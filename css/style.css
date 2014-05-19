@@ -28,8 +28,11 @@ nav{
 
 ul {
 
+	padding-left: 0px;
+	width: 100%;
 	list-style-type: none; 
-	display: inline;
+	display: block;
+	overflow: hidden;
 
 }
 
@@ -43,6 +46,9 @@ li {
 
 .selected_slide {
 
+	position: relative;
+	left: 0;
+	bottom: 0;
 	display: block;
 
 }
