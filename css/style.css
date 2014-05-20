@@ -11,6 +11,8 @@ body {
 	width: 1000px;
 	margin-left:auto;
 	margin-right:auto;
+	overflow: hidden;
+	text-align: center;
 
 }
 
@@ -29,18 +31,37 @@ nav{
 ul {
 
 	padding-left: 0px;
-	width: 100%;
+	width: 300%;
 	list-style-type: none; 
 	display: block;
-	overflow: hidden;
 
 }
 
 li {
 
+	width: 50%;
 	float:left;
 	display: none;
         list-style-type: none;
+
+}
+
+button {
+
+	margin: 0;
+	padding: 0;
+	line-height: 100%;
+	border: 0;
+	background: none;
+	text-decoration: none;
+	cursor: pointer;
+
+}
+
+.selected_page {
+
+	background-color: black;
+	border-radius: 4px;
 
 }
 
@@ -49,17 +70,10 @@ li {
 	position: relative;
 	left: 0;
 	bottom: 0;
-	display: block;
+	display: inline-block;
 
 }
 
-	
-.selected {
-
-	background-color: black;
-	border-radius: 4px;
-
-}
 
 a:link {
 
@@ -120,12 +134,16 @@ a {
 
 #display_menu {
 
-	cursor: pointer;
 	display: none;
 
 }
 
 
+#slideleft, #slideright {
+
+	font-size:50px;
+
+}
 
 @media screen and (max-width: 600px)
 {

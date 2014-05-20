@@ -47,19 +47,48 @@ $( document ).ready( function(){
 
 	});
 
-	$('#slideleft').click(function() {
-		var $lefty = $(this).prev().children('.selected_slide');
-		var $right = $lefty.next();
-		$right.show();
-		$lefty.animate({
-			left : "-3000"
-		}, 1200000000);
+	$('#slideright').click(function() {
+		var parent_div = $('#carousel');
+		console.log(parent_div);
+		var largeur_parent_div = parent_div.css("widht");
+		console.log(parent_div.css("widht"));
+		largeur_parent_div = "3000"
+		largeur_parent_div = largeur_parent_div.substring(0, largeur_parent_div.length -2);
+		largeur_parent_div = parseInt(largeur_parent_div) / 2;
+		parent_div.css({"margin-right": largeur_parent_div + "px"});
+		if(parent_div.children('.left').css("margin-left") !== "0px") return;
+		var select = parent_div.children('.selected_slide');
+		var right = parent_div.children('.right');
+		if(right.hasClass('first_li')) {
+			right.next().addClass('first_li');
+			right.removeClass('first_li');
+			right.appendTo(parent_div);
+			right.prev().removeClass('last_li');
+			right.addClass('last_li');
+		}
+		parent_div.css({"width": "300%"});
+		var largeur = $('#contener').css("width");
+		select.css({"width": largeur, "display": "inline-block"});
+		right.css({"width": largeur, "display": "inline-block"});
+		select.animate({
+			marginLeft : "-" + select.width()
+		}, 1000, function(){
+			select.hide();
+			select.css({"margin-left": "0px"});
+		});
 		
-		$lefty.hide();
-		$right.animate({
-                        left : "0"
-                });
-
+		select.prev().removeClass('left');
+		right.removeClass('right');
+		right.addClass('selected_slide');
+		select.removeClass('selected_slide');	
+		select.addClass('left');
+		console.log(right.next().html());
+		if (right.next().html() === undefined) {
+			$('#carousel li:first-child').addClass('right');
+		}	
+		else {
+			right.next().addClass('right');
+		}
 	});
 
 
