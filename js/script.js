@@ -1,5 +1,19 @@
 $( document ).ready( function(){
 
+		var parent_div = $('#carousel');
+		//var select = parent_div.children('.selected_slide');
+		//var right = parent_div.children('.right');
+		var largeur_parent_div = parent_div.width();
+		//console.log(largeur_parent_div);
+		//largeur_parent_div = "3000"
+		//largeur_parent_div = largeur_parent_div.substring(0, largeur_parent_div.length -2);
+		largeur_parent_div = parseInt(largeur_parent_div) / 3;
+		//console.log(typeof(largeur_parent_div));
+		parent_div.css({"position": "relative", "left": "-" + largeur_parent_div + "px"});
+		//var largeur = $('#contener').css("width");
+		//select.css({"width": largeur,"margin-left": largeur, "margin-right": "0px"});
+		//right.css({"width": largeur});
+		
 
 	var locat = window.location.pathname;
 	if (locat === '/ghislain/') locat += 'index.html';
@@ -49,16 +63,22 @@ $( document ).ready( function(){
 
 	$('#slideright').click(function() {
 		var parent_div = $('#carousel');
-		console.log(parent_div);
-		var largeur_parent_div = parent_div.css("widht");
-		console.log(parent_div.css("widht"));
-		largeur_parent_div = "3000"
-		largeur_parent_div = largeur_parent_div.substring(0, largeur_parent_div.length -2);
-		largeur_parent_div = parseInt(largeur_parent_div) / 2;
-		parent_div.css({"margin-right": largeur_parent_div + "px"});
 		if(parent_div.children('.left').css("margin-left") !== "0px") return;
 		var select = parent_div.children('.selected_slide');
+		select.css({"margin-right": "0px"});
 		var right = parent_div.children('.right');
+		//var largeur_parent_div = parent_div.width();
+		//console.log(largeur_parent_div);
+		//largeur_parent_div = "3000"
+		//largeur_parent_div = largeur_parent_div.substring(0, largeur_parent_div.length -2);
+		//largeur_parent_div = parseInt(largeur_parent_div) / 3;
+		//console.log(typeof(largeur_parent_div));
+		//parent_div.css({"position": "relative", "left": "-" + largeur_parent_div + "px"});
+		var largeur = $('#contener').css("width");
+		select.css({"display": "inline-block"});
+		right.css({"position": "relative", "margin-right": "0px", "display": "inline-block"});
+		select.css({"width": largeur,"margin-left": largeur, "margin-right": "0px"});
+		right.css({"width": largeur,"right": largeur});
 		if(right.hasClass('first_li')) {
 			right.next().addClass('first_li');
 			right.removeClass('first_li');
@@ -66,15 +86,13 @@ $( document ).ready( function(){
 			right.prev().removeClass('last_li');
 			right.addClass('last_li');
 		}
-		parent_div.css({"width": "300%"});
-		var largeur = $('#contener').css("width");
-		select.css({"width": largeur, "display": "inline-block"});
-		right.css({"width": largeur, "display": "inline-block"});
+		select.css({"display": "inline-block"});
+		right.css({"display": "inline-block"});
 		select.animate({
-			marginLeft : "-" + select.width()
+			marginLeft : "0px"
 		}, 1000, function(){
 			select.hide();
-			select.css({"margin-left": "0px"});
+			//select.css({"margin-left": "0px"});
 		});
 		
 		select.prev().removeClass('left');
