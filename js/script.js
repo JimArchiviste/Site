@@ -1,19 +1,5 @@
 $( document ).ready( function(){
 
-		var parent_div = $('#carousel');
-		//var select = parent_div.children('.selected_slide');
-		//var right = parent_div.children('.right');
-		var largeur_parent_div = parent_div.width();
-		//console.log(largeur_parent_div);
-		//largeur_parent_div = "3000"
-		//largeur_parent_div = largeur_parent_div.substring(0, largeur_parent_div.length -2);
-		largeur_parent_div = parseInt(largeur_parent_div) / 3;
-		//console.log(typeof(largeur_parent_div));
-		parent_div.css({"position": "relative", "left": "-" + largeur_parent_div + "px"});
-		//var largeur = $('#contener').css("width");
-		//select.css({"width": largeur,"margin-left": largeur, "margin-right": "0px"});
-		//right.css({"width": largeur});
-		
 
 	var locat = window.location.pathname;
 	if (locat === '/ghislain/') locat += 'index.html';
@@ -63,22 +49,11 @@ $( document ).ready( function(){
 
 	$('#slideright').click(function() {
 		var parent_div = $('#carousel');
-		if(parent_div.children('.left').css("margin-left") !== "0px") return;
 		var select = parent_div.children('.selected_slide');
-		select.css({"margin-right": "0px"});
+		var largeur = $('#contener').width();
+		//if(select.css("margin-left") !== "33.333333333%") return;
+		//select.css({"margin-right": "0px"});
 		var right = parent_div.children('.right');
-		//var largeur_parent_div = parent_div.width();
-		//console.log(largeur_parent_div);
-		//largeur_parent_div = "3000"
-		//largeur_parent_div = largeur_parent_div.substring(0, largeur_parent_div.length -2);
-		//largeur_parent_div = parseInt(largeur_parent_div) / 3;
-		//console.log(typeof(largeur_parent_div));
-		//parent_div.css({"position": "relative", "left": "-" + largeur_parent_div + "px"});
-		var largeur = $('#contener').css("width");
-		select.css({"display": "inline-block"});
-		right.css({"position": "relative", "margin-right": "0px", "display": "inline-block"});
-		select.css({"width": largeur,"margin-left": largeur, "margin-right": "0px"});
-		right.css({"width": largeur,"right": largeur});
 		if(right.hasClass('first_li')) {
 			right.next().addClass('first_li');
 			right.removeClass('first_li');
@@ -86,16 +61,20 @@ $( document ).ready( function(){
 			right.prev().removeClass('last_li');
 			right.addClass('last_li');
 		}
-		select.css({"display": "inline-block"});
-		right.css({"display": "inline-block"});
+		var margin_left = "-" + largeur;
+		//select.css({"margin-left": largeur, "width": largeur})
+		//right.css({"margin-left": "0px", "width": largeur});
+		select.css({"display": "inline", "width": "33.333333333333333333%"});
+		right.css({"display": "inline"});
 		select.animate({
 			marginLeft : "0px"
 		}, 1000, function(){
 			select.hide();
-			//select.css({"margin-left": "0px"});
+			//right.css({"right": "0px"});
+			//right.css({"margin-left": largeur});
 		});
 		
-		select.prev().removeClass('left');
+		select.parent().children('.left').removeClass('left');
 		right.removeClass('right');
 		right.addClass('selected_slide');
 		select.removeClass('selected_slide');	
