@@ -11,7 +11,6 @@ $( document ).ready( function(){
 	choices.children().each(function(e){
 		
 		var that = $(this);
-
 		display_menu(that);
 	})
 
@@ -20,7 +19,7 @@ $( document ).ready( function(){
                 if (that.attr('href') === undefined) return;
                 if ('/ghislain/' + that.attr('href') === locat){
 
-                        that.addClass('selected');
+                        that.addClass('selected_page');
 
                 }
 
@@ -61,13 +60,12 @@ $( document ).ready( function(){
 			right.prev().removeClass('last_li');
 			right.addClass('last_li');
 		}
-		select.css({"display": "inline-block", "width": "33.333333333%"});
 		right.css({"display": "inline-block", "width": "33.3333333333%"});
+		select.css({"display": "inline-block", "width": "33.333333333%"});
 		select.animate({
 			marginLeft : "0px"
 		}, 1000, function(){
 			select.hide();
-			select.css({"width": "", "margin-left": ""});
 			select.parent().children('.left').removeClass('left');
 			right.removeClass('right');
 			right.addClass('selected_slide');
@@ -79,6 +77,7 @@ $( document ).ready( function(){
 			else {
 				right.next().addClass('right');
 			}
+			select.css({"width": "", "margin-left": ""});
 		});
 	});
 

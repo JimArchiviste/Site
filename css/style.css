@@ -41,10 +41,18 @@ ul {
 }
 
 li {
-
+	text-align: center;
 	display: none;
 	list-style-type: none;
+	height: 300px;
 	/**display: inline-block;**/
+
+}
+
+li > div {
+
+	padding-top: 50%;
+	padding-bottom: 50%;
 
 }
 
@@ -114,6 +122,31 @@ a {
 	text-align: center;
 	padding: 10px;
 	margin: 10px;
+}
+
+#buttons {
+
+	text-align: left;
+
+}
+
+#slideleft {
+
+	position: relative;
+	bottom: 200px;
+	z-index: 10;
+	left: 3px;
+
+}
+
+#slideright {
+
+	position: relative;
+	bottom: 200px;
+	z-index: 10;
+	float: right;
+	right: 3px;
+
 }
 
 #my_name {
