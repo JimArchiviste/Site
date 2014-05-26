@@ -64,28 +64,31 @@ $( document ).ready( function(){
 		var margin_left = "-" + largeur;
 		//select.css({"margin-left": largeur, "width": largeur})
 		//right.css({"margin-left": "0px", "width": largeur});
-		select.css({"display": "inline", "width": "33.333333333333333333%"});
-		right.css({"display": "inline"});
+		select.css({"display": "inline-block", "width": largeur});
+		console.log(select.width());
+		right.css({"display": "inline-block", "width": largeur});
 		select.animate({
 			marginLeft : "0px"
 		}, 1000, function(){
 			select.hide();
+			select.css({"width": "", "margin-left": ""});
+			select.parent().children('.left').removeClass('left');
+			right.removeClass('right');
+			right.addClass('selected_slide');
+			select.removeClass('selected_slide');	
+			select.addClass('left');
+			console.log(right.next().html());
+			if (right.next().html() === undefined) {
+				$('#carousel li:first-child').addClass('right');
+			}	
+			else {
+				right.next().addClass('right');
+			}
 			//right.css({"right": "0px"});
 			//right.css({"margin-left": largeur});
 		});
 		
-		select.parent().children('.left').removeClass('left');
-		right.removeClass('right');
-		right.addClass('selected_slide');
-		select.removeClass('selected_slide');	
-		select.addClass('left');
-		console.log(right.next().html());
-		if (right.next().html() === undefined) {
-			$('#carousel li:first-child').addClass('right');
-		}	
-		else {
-			right.next().addClass('right');
-		}
+		
 	});
 
 

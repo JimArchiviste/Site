@@ -42,8 +42,6 @@ ul {
 
 li {
 
-	width: 33.333333333%;
-	margin-left: 33.333333333%;
 	display: none;
 	list-style-type: none;
 	/**display: inline-block;**/
@@ -72,6 +70,8 @@ button {
 .selected_slide {
 
 	position: relative;
+	width: 33.333333333%;
+	margin-left: 33.333333333%;
 	left: 0;
 	bottom: 0;
 	display: inline-block;
