@@ -32,6 +32,7 @@ ul {
 	text-align: left;
 	margin-left: 0 auto;
 	margin-right: 0 auto;
+	max-height: 300px;
 	padding-left: 0px;
 	width: 300%;
 	margin-left: -100%;
@@ -47,6 +48,7 @@ li {
 	list-style-type: none;
 	height: 300px;
 	font-size: 20px; font-size: 2rem;
+	vertical-align: text-top;
 	/**display: inline-block;**/
 
 }
@@ -78,8 +80,8 @@ button {
 .selected_slide {
 
 	position: relative;
-	width: 33.333333333%;
-	margin-left: 33.333333333%;
+	width: 33.3333%;
+	margin-left: 33.3333%;
 	left: 0;
 	bottom: 0;
 	display: inline-block;
