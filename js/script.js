@@ -60,8 +60,9 @@ $( document ).ready( function(){
 			right.prev().removeClass('last_li');
 			right.addClass('last_li');
 		}
-		right.css({"display": "inline-block", "width": "33.3333333333%"});
-		select.css({"display": "inline-block", "width": "33.333333333%"});
+		//right.animate({display: "inline-block", width: "33.3333333333%"}, {queue: true});
+		right.css({"display": "inline-block", "width": "33.33333%"});
+		select.css({"display": "inline-block", "width": "33.33333333%"});
 		select.animate({
 			marginLeft : "0px"
 		}, 1000, function(){
@@ -69,6 +70,7 @@ $( document ).ready( function(){
 			select.parent().children('.left').removeClass('left');
 			right.removeClass('right');
 			right.addClass('selected_slide');
+			right.css({"width": ""});
 			select.removeClass('selected_slide');	
 			select.addClass('left');
 			if (right.next().html() === undefined) {

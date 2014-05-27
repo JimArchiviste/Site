@@ -37,6 +37,7 @@ ul {
 	margin-left: -100%;
 	list-style-type: none; 
 	display: inline-block;
+	font-size: 0px;
 
 }
 
@@ -45,14 +46,13 @@ li {
 	display: none;
 	list-style-type: none;
 	height: 300px;
+	font-size: 20px; font-size: 2rem;
 	/**display: inline-block;**/
 
 }
 
 li > div {
 
-	padding-top: 50%;
-	padding-bottom: 50%;
 
 }
 
