@@ -88,6 +88,11 @@ button {
 
 }
 
+.selected_button {
+
+	color: white;
+
+}
 
 a:link {
 
