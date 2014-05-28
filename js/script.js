@@ -62,12 +62,6 @@ function move_to_slide (index)
 	{
 		left_slide($( "#carousel li:eq( " + index + " )" ));
 	}
-	$(".selected_button").removeClass("selected_button");
-	setTimeout(function()
-	{
-		$( "#circles button:eq( " + index + " )" ).addClass("selected_button");
-	}, 1000);
-	
 }
 
 function right_slide(target)
@@ -96,6 +90,7 @@ function right_slide(target)
 	}
 	right.css({"display": "inline-block", "width": "33.3333%"});
 	select.css({"display": "inline-block", "width": "33.3333%"});
+	$(".selected_button").removeClass("selected_button");
 	select.animate({
 		marginLeft : "0px"
 	}, duration, function()
@@ -107,12 +102,14 @@ function right_slide(target)
 			right.remove();
 			true_right.addClass('selected_slide');
 			true_right.removeAttr("style");
+			$( "#circles button:eq( " + true_right.index()  + " )" ).addClass("selected_button");
 		}
 		else
 		{
 			right.removeClass();
 			right.addClass('selected_slide');
 			right.removeAttr("style");
+			$( "#circles button:eq( " + right.index()  + " )" ).addClass("selected_button");
 		}
 		select.removeAttr('style');
 		$('#slideright').on('click', function()
@@ -162,6 +159,7 @@ function left_slide(target)
 	}
 	select.css({"display": "inline-block", "width": "33.3333%", "margin-left": "0px"});
 	left.css({"display": "inline-block", "width": "33.3333%"});
+	$(".selected_button").removeClass("selected_button");
 	left.animate({
 		marginLeft : "33.3333%"
 	}, 1000, function()
@@ -173,11 +171,13 @@ function left_slide(target)
 			left.remove();
 			true_left.addClass('selected_slide');
 			true_left.removeAttr("style");
+			$( "#circles button:eq( " + true_left.index()  + " )" ).addClass("selected_button");
 		}
 		else
 		{
 			left.addClass('selected_slide');
 			left.removeAttr("style");
+			$( "#circles button:eq( " + left.index()  + " )" ).addClass("selected_button");
 		}
 		select.removeAttr("style");
 		$('#slideright').on('click', function()
