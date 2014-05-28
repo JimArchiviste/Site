@@ -1,6 +1,6 @@
 $( document ).ready( function()
 {
-	var locat = window.location.pathname;
+	/**var locat = window.location.pathname;
 	if (locat === '/ghislain/') locat += 'index.html';
 
 	display_menu($("#my_name"));
@@ -26,7 +26,7 @@ $( document ).ready( function()
                 });
 
 
-	}
+	}**/
 
 	//$("nav a.select" ).removeClass("selected");
 	$("#display_menu").click(function()
@@ -61,15 +61,17 @@ $( document ).ready( function()
 		$('#slideleft').unbind();
 		var parent_div = $('#carousel');
                 var select = parent_div.children('.selected_slide');
-                var right = parent_div.children('.right');
-                if(right.hasClass('first_li'))
-                {
-                        right.next().addClass('first_li');
-                        right.removeClass('first_li');
-                        right.appendTo(parent_div);
-                        right.prev().removeClass('last_li');
-                        right.addClass('last_li');
-                }
+		var right = null;
+		var true_right = null;
+		if (select.next().html() === undefined)
+		{
+			true_right = $("#carousel li:first-child");
+			right = true_right.clone().appendTo(parent_div);
+		}
+		else
+		{
+			right = select.next();
+		}
                 right.css({"display": "inline-block", "width": "33.3333%"});
                 select.css({"display": "inline-block", "width": "33.3333%"});
                 select.animate({
@@ -77,21 +79,20 @@ $( document ).ready( function()
                 }, 1000, function()
                 {
                         select.hide();
-                        select.parent().children('.left').removeClass('left');
-                        right.removeClass('right');
-                        right.addClass('selected_slide');
-                        right.css({"width": ""});
-                        select.removeClass('selected_slide');
-                        select.addClass('left');
-                        if (right.next().html() === undefined)
-                        {
-                                $('#carousel li:first-child').addClass('right');
-                        }
-                        else
-                        {
-                                right.next().addClass('right');
-                        }
-                        select.css({"width": "", "margin-left": ""});
+                        select.removeAttr('class');
+			if (true_right !== null)
+			{
+				right.remove();
+				true_right.addClass('selected_slide');
+				true_right.removeAttr("style");
+			}
+			else
+			{
+				right.removeClass();
+				right.addClass('selected_slide');
+				right.removeAttr("style");
+			}
+                        select.removeAttr('style');
                         $('#slideright').on('click', function()
 			{
 				right_slide();
@@ -111,14 +112,16 @@ $( document ).ready( function()
 		$('#slideleft').unbind();
 		var parent_div = $('#carousel');
 		var select = parent_div.children('.selected_slide');
-		var left = parent_div.children('.left');
-		if(left.hasClass('last_li'))
+		var left = null;
+		var true_left = null;
+		if (select.prev().html() === undefined)
 		{
-			left.prev().addClass('last_li');
-			left.removeClass('last_li');
-			left.prependTo(parent_div);
-			left.next().removeClass('first_li');
-			left.addClass('first_li');
+			true_left = $("#carousel li:last-child");
+			left = true_left.clone().prependTo(parent_div);
+		}
+		else
+		{
+			left = select.prev();
 		}
 		select.css({"display": "inline-block", "width": "33.3333%", "margin-left": "0px"});
 		left.css({"display": "inline-block", "width": "33.3333%"});
@@ -127,20 +130,19 @@ $( document ).ready( function()
 		}, 1000, function()
 		{
 			select.hide();
-			select.css({"width": "", "margin-left": ""});
-			select.parent().children('.right').removeClass('right');
-			left.removeClass('left');
-			left.addClass('selected_slide');
-			select.removeClass('selected_slide');	
-			select.addClass('right');
-			if (left.prev().html() === undefined)
+                        select.removeAttr('class');
+			if (true_left !== null)
 			{
-				$('#carousel li:last-child').addClass('left');
-			}	
+				left.remove();
+				true_left.addClass('selected_slide');
+				true_left.removeAttr("style");
+			}
 			else
 			{
-				left.prev().addClass('left');
+				left.addClass('selected_slide');
+				left.removeAttr("style");
 			}
+			select.removeAttr("style");
                         $('#slideright').on('click', function()
 			{
 				right_slide();
