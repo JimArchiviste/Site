@@ -4,7 +4,7 @@ $( document ).ready( function()
 	window.intervalID = setInterval(function()
 	{  
 	   right_slide();  
-	}, 3500);
+	}, 5000);
 });
 $( document ).ready( function()
 {
@@ -127,7 +127,7 @@ function right_slide(target)
 		window.intervalID = setInterval(function()
 		{
 		   right_slide();
-		}, 3500);
+		}, 5000);
 	});
 	
 
@@ -195,6 +195,6 @@ function left_slide(target)
 		window.intervalID = setInterval(function()
 		{
 		   right_slide();
-		}, 3500);
+		}, 5000);
 	});
 }
