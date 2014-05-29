@@ -1,0 +1,10 @@
+{
+	"experiences": "Expériences",
+	"contact": "Contact",
+        "welcome1": "Bienvenue sur mon premier site web personnel.",
+	"welcome2": "Je l'ai fait dans différentes langues, avec JQuery et i18next.",
+	"skills": "Voici mes compétences :",
+	"skill1": "JavaScript",
+	"skill2": "HTML5/CSS3",
+	"skill3": "Java"
+}
