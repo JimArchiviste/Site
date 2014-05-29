@@ -9,7 +9,7 @@
 		<link href="../images/favicon.ico" rel="icon">
 		<link href="css/font-awesome.min.css" rel="stylesheet">
 		<script src="js/jquery-1.10.2.js"></script>
-		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script type="text/javascript" language="JavaScript" src="js/i18next-1.7.3.min.js"></script>
 		<script src="js/script.js"></script>
 	</head>
 
@@ -18,25 +18,31 @@
 		<div id="contener">
 
 			<nav>
-				<a href="index.html" id="my_name" class="selected_page">Ghislain DUGAT</a>
+				<a href="index.html" class="selected_page">Ghislain DUGAT</a>
+				<button class="fa fa-globe"></button>
 				<button id="display_menu" class="fa fa-bars"></button>
 				<div id="menu_choices">
-					<a href="skills.html">Skills</a>
-					<a href="experiences.html">Experiences</a>
-					<a href="contact.html">Contact</a>
+					<a href="experiences.html" data-i18n="experiences" ></a>
+					<a href="contact.html"data-i18n="contact"></a>
 				</div>
+				<div id="langues"><img src="images/fr.png" name="fr"></img><img src="images/uk.png" name="en"></img></div>
 			</nav>
 
 			<ul id="carousel">
-			  <li class="selected_slide"><div>Please check the others slides.</div></li>
-			  <li><div>This is my first web personnal website.</div></li>
-			  <li><div>yes</div></li>
-			  <li><div>no</div></li>
+				<li class="selected_slide"><div data-i18n="welcome1"></div><div data-i18n="welcome2"></div></li>
+				<li>
+					<div>
+						<div>
+							<div data-i18n="skills"></div>
+							<span data-i18n="skill1"></span>
+							<span data-i18n="skill2"></span>
+							<span data-i18n="skill2"></span>
+						</div>
+					</div>
+				</li>
 			</ul>
 			<div id="circles">
 				<button class="fa fa-circle selected_button"></button>
-				<button class="fa fa-circle"></button>
-				<button class="fa fa-circle"></button>
 				<button class="fa fa-circle"></button>
 			</div>
 			<div id="buttons">

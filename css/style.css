@@ -26,6 +26,8 @@ nav{
 
 }
 
+
+
 ul {
 
 	position: relative;
@@ -42,9 +44,20 @@ ul {
 
 }
 
-li {
-	text-align: center;
+.selected_slide {
+
+	position: relative;
+	width: 33.3333%;
+	margin-left: 33.3333%;
+	left: 0;
+	bottom: 0;
+
+}
+
+
+#carousel > li {
 	display: none;
+	text-align: center;
 	list-style-type: none;
 	height: 300px;
 	font-size: 20px; font-size: 2rem;
@@ -53,8 +66,44 @@ li {
 
 }
 
+li > div > div {
+
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+
+}
+
+li > div > div > span {
+
+	margin-left: 70px;
+	display: list-item;
+	list-style-type: disc;
+
+}
+
 li > div {
 
+	margin-top: 10px;
+
+}
+
+#langues {
+
+	display:none;
+	position: relative;
+	text-align: right;
+	margin-top: -5px;
+	margin-right: 10px;
+	z-index: 10;
+
+}
+	
+img {
+
+	margin-left: 5px;
+	cursor: pointer;
 
 }
 
@@ -77,15 +126,9 @@ button {
 
 }
 
-.selected_slide {
-
-	position: relative;
-	width: 33.3333%;
-	margin-left: 33.3333%;
-	left: 0;
-	bottom: 0;
-	display: inline-block;
-
+.fa-globe {
+	font-size: 40px;
+	vertical-align: middle;
 }
 
 .selected_button {
@@ -204,14 +247,28 @@ a {
 		display: inline-block;
 		position: absolute;
 		margin: 10px;
+		margin-right: 0px;
+		right: 60px;
+		font-size: 40px;
+	}
+	.fa-globe {
+		display: inline-block;
+		position: absolute;
+		margin: 10px;
+		margin-right: 0px;
 		right: 10px;
 		font-size: 40px;
+	}
+	#langues {
+
+		margin-right: 10px;
+
 	}
 }
 
 
 
-@media screen and (max-width: 1000px)
+@media screen and (max-width: 1015px)
 {
 
 	#contener {
