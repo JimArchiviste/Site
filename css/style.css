@@ -1,8 +1,9 @@
 body {
 
 	margin: 0;
-	background-color: #5A5A5A;
-
+	/**background-color: #5A5A5A;**/
+	background-color: #2E9AFE;
+	
 }
 
 #contener {
@@ -16,6 +17,7 @@ body {
 
 nav{
 
+	position: relative;
 	border-radius: 4px;
 	background-color: #222222;
 	display: table;
@@ -60,7 +62,7 @@ ul {
 	text-align: center;
 	list-style-type: none;
 	height: 300px;
-	font-size: 20px; font-size: 2rem;
+	font-size: 17px; font-size: 1.7rem;
 	vertical-align: text-top;
 	/**display: inline-block;**/
 
@@ -72,6 +74,12 @@ li > div > div {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: left;
+
+}
+
+li > div > div > div {
+
+	margin-bottom: 10px;
 
 }
 
@@ -94,11 +102,10 @@ li > div {
 #langues {
 
 	display:none;
-	position: relative;
+	position: absolute;
 	text-align: right;
-	margin-top: -5px;
-	margin-right: 10px;
-	z-index: 10;
+	right: 0px;
+	z-index: 1;
 
 }
 	
@@ -131,6 +138,7 @@ button {
 .fa-globe {
 	font-size: 40px;
 	vertical-align: middle;
+	color: #BABABA;
 }
 
 .selected_button {
@@ -224,6 +232,7 @@ a {
 #display_menu {
 
 	display: none;
+	color: #BABABA;
 
 }
 

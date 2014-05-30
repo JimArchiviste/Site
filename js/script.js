@@ -31,7 +31,7 @@ $( document ).on('i18n:load', function()
 		var langues = $('#langues');	
 		if (choices.is(':hidden'))
 		{
-			if(langues.is(':visible')) langues.slideUp();
+			//if(langues.is(':visible')) langues.slideUp();
 			choices.slideDown();
 		}
 
@@ -47,7 +47,7 @@ $( document ).on('i18n:load', function()
 		var choices = $('#menu_choices') ;
 		if (lang.is(':hidden'))
 		{
-			if(choices.is(':visible') && window.innerWidth < 601) choices.slideUp();
+			//if(choices.is(':visible') && window.innerWidth < 601) choices.slideUp();
 			lang.slideDown();
 		}
 
@@ -244,3 +244,13 @@ function left_slide(target)
 		}, 5000);
 	});
 }
+
+
+var captcha = {
+
+        "Combien vaut (8*4)/(6*2) ?": "2",
+	"Trouvez x : 3*8 = x*6": "4",
+	"Le soleil est-il une étoile ?": "Oui",
+
+}
+
