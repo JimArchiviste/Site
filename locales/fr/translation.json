@@ -1,10 +1,26 @@
 {
+	"skills_menu": "Compétences",
 	"experiences": "Expériences",
 	"contact": "Contact",
         "welcome1": "Bienvenue sur mon premier site web personnel.",
 	"welcome2": "Je l'ai fait dans différentes langues, avec JQuery et i18next.",
+	"welcome3": "Consultez les autres slides et pages pour plus d'informations.",
 	"skills": "Voici mes compétences :",
-	"skill1": "JavaScript",
+	"skill1": "JavaScript, Ajax",
 	"skill2": "HTML5/CSS3",
-	"skill3": "Java"
+	"skill3": "Java",
+        "skill4": "SQL, PL/SQL",
+        "skill5": "Mathematiques",
+	"formation": "J'ai eu mon bac S mention Bien au Lycée Émile Zola d'Aix-en-Provence, et je suis maintenant en deuxième année d'IUT Infomatique à Aix-en-Provence.",
+        "more_informations1": "Cliquez ",
+        "here": "ici",
+        "more_informations2": " pour plus d'informations.",
+        "name": "Nom :",
+        "name_verif": "Pas moins de 4 caracs.",
+	"email": "Email :",
+	"email_verif": "Mauvais email.",
+	"message": "Message :",
+	"send": "Envoyer",
+	"reinitialize": "Réinitialiser"
+
 }

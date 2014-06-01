@@ -37,7 +37,6 @@ $(document).ready(function()
     
 	check['name'] = function(id)
 	{
-    
 		var name = document.getElementById(id),
 			tooltipStyle = getTooltip(name).style;
 	    
@@ -84,7 +83,7 @@ $(document).ready(function()
 	{
     
 		var result = true;
-	    
+		var that = $(this);
 		for (var i in check)
 		{
 			result = check[i](i) && result;
@@ -92,7 +91,25 @@ $(document).ready(function()
 	    
 		if (result)
 		{
-			alert('Le formulaire est bien rempli.');
+			$.ajax(
+			{
+				url: that.attr('action'),
+				type: that.attr('method'),
+				data: that.serialize(),
+				dataType: 'json',
+				success: function(json)
+				{
+					if(json.reponse === 'Ok.')
+					{
+						console.log('Tout est bon');
+					}
+					else
+					{
+						console.log('Erreur : '+ json.reponse);
+					}
+				}
+			});
+			//alert('Le formulaire est bien rempli.');
 		}
 		else
 		{
@@ -125,3 +142,12 @@ $(document).ready(function()
     
 	};
 });
+
+
+var captcha = {
+
+        "Combien vaut (8*4)/(6*2) ?": "2",
+        "Trouvez x : 3*8 = x*6": "4",
+        "Le soleil est-il une étoile ?": "Oui",
+
+}

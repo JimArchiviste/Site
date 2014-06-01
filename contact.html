@@ -29,20 +29,20 @@
 				</div>
 				<div id="langues"><img src="images/fr.png" name="fr"></img><img src="images/uk.png" name="en"></img></div>
 			</nav>
-			<form id="myForm">
+			<form id="myForm" action="php/contact.php" method="post">
 					
-				<label class="form_col" for="name">Nom :</label>
-				<input name="name" id="name" type="text" />
-				<span class="tooltip">Pas  moins de 4 caractères</span>
+				<label class="form_col" for="name" data-i18n="name"></label>
+				<input name="name" id="name" type="text" autofocus="true" />
+				<span class="tooltip" data-i18n="name_verif"></span>
 				<br /><br />
-				<label class="form_col" for="email">Email :</label>
+				<label class="form_col" for="email" data-i18n="email"></label>
 				<input name="email" id="email" type="text" />
-				<span class="tooltip">Mauvais mail</span>
+				<span class="tooltip" data-i18n="email_verif"></span>
 				<br /><br />
-				<label class="form_col" for="email">Message :</label>
-				<textarea name="text" id="text" type="text"></textarea>
+				<label class="form_col" for="message" data-i18n="message"></label>
+				<textarea name="message" id="message" type="text"></textarea>
 				<br /><br />
-				<input type="submit" value="Envoyer" /> <input type="reset" value="Réinitialiser" />
+				<input type="submit" data-i18n="[value]send" /> <input type="reset" data-i18n="[value]reinitialize" />
 			</form>
 			<noscript>
 				<p>I made this website beautiful with JavaScript, don't miss it !</p>

@@ -1,10 +1,26 @@
 {
+	"skills_menu": "Skills",
         "experiences": "Experiences",
         "contact": "Contact",
 	"welcome1": "Welcome to my first personnal web site.",
 	"welcome2": "I've made it in different languages, with JQuery and i18next.",
+        "welcome3": "Checkout the other slide and pages for more informations.",
         "skills": "Here are my skills :",
-	"skill1": "JavaScript",
+	"skill1": "JavaScript, Ajax",
         "skill2": "HTML5/CSS3",
-        "skill3": "Java"
+        "skill3": "Java",
+	"skill4": "SQL, PL/SQL",
+	"skill5": "Mathematics",
+	"formation": "I graduated with honors in Sciences from High School Émile Zola in Aix-en-Provence, and I'm now in second year of Computer Scciences IUT in Aix-en-Provence.",
+	"more_informations1": "Click ",
+	"here": "here",
+	"more_informations2": " for more informations.",
+	"name": "Name :",
+	"name_verif": "No less than 4 caracs.",
+        "email": "Email :",
+        "email_verif": "Wrong email.",
+        "message": "Message :",
+        "send": "Send",
+        "reinitialize": "Reinitialize"
+
 }

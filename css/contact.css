@@ -3,63 +3,99 @@
 *       http://fr.openclassrooms.com/informatique/cours/dynamisez-vos-sites-web-avec-javascript/tp-un-formulaire-interactif
 *
 **/
+
 #myForm {
-  margin-top: 10px;
+
+	margin-top: 10px;
+
 }
 
 label {
-  vertical-align: top;
+
+	vertical-align: top;
+
+}
+
+textarea {
+
+	resize: none;
+	width: 179px;
+	height: 100px;
+
 }
 
 .form_col {
-  display: inline-block;
-  margin-right: 15px;
-  padding: 3px 0px;
-  width: 200px;
-  min-height: 1px;
-  text-align: right;
-  margin-left: -200px;
+
+	display: inline-block;
+	margin-right: 15px;
+	padding: 3px 0px;
+	width: 200px;
+	min-height: 1px;
+	text-align: right;
+	margin-left: -200px;
+
 }
+
 input {
-  padding: 2px;
-  border: 1px solid #CCC;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  outline: none; /* Retire la bordure orange appliquée par certains navigateurs (Chrome notamment) lors du focus des éléments <input> */
+
+	padding: 2px;
+	border: 1px solid #CCC;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	outline: none;
+
 }
+
 input:focus {
-  border-color: rgba(82, 168, 236, 0.75);
-  -moz-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
-  -webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
-  box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+
+	border-color: rgba(82, 168, 236, 0.75);
+	-moz-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+	-webkit-box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+	box-shadow: 0 0 8px rgba(82, 168, 236, 0.5);
+
 }
+
 .correct {
-  border-color: rgba(68, 191, 68, 0.75);
+
+	border-color: rgba(68, 191, 68, 1);
+
 }
+
 .correct:focus {
-  border-color: rgba(68, 191, 68, 0.75);
-  -moz-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
-  -webkit-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
-  box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+
+	border-color: rgba(68, 191, 68, 1);
+	-moz-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+	-webkit-box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+	box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+
 }
+
 .incorrect {
-  border-color: rgba(191, 68, 68, 0.75);
+
+	border-color: rgba(191, 68, 68, 1);
+
 }
+
 .incorrect:focus {
-  border-color: rgba(191, 68, 68, 0.75);
-  -moz-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
-  -webkit-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
-  box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+
+	border-color: rgba(191, 68, 68, 1);
+	-moz-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+	-webkit-box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+	box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+
 }
+
 .tooltip {
-  position: absolute;
-  display: inline-block;
-  margin-left: 20px;
-  padding: 2px 4px;
-  border: 1px solid #555;
-  background-color: #CCC;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
+
+	position: absolute;
+	display: inline-block;
+	margin-left: 20px;
+	padding: 2px 4px;
+	border: 1px solid #555;
+	background-color: #CCC;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+
 }
