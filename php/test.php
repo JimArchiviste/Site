@@ -1,5 +1,4 @@
 <?php
-//phpinfo();
 /**
 echo json_encode(strlen($_POST['name']));
 echo json_encode(verifMail($_POST['email']));

@@ -99,7 +99,7 @@ $(document).ready(function()
 				dataType: 'json',
 				success: function(json)
 				{
-					if(json.reponse === 'Ok.')
+					if(json.reponse === true)
 					{
 						console.log('Tout est bon');
 					}

@@ -3,24 +3,18 @@
 	{
 		if(strlen($_POST['name']) > 4 && (verifMail($_POST['email'])) && ($_POST['message'] !== ''))
 		{
-			$reponse = 'Ok.';
-			$sujet = "Demande de contact";
+			$sujet = "Remarques sur le site";
 
 			$nom = $_POST['name'];
 			$email = $_POST['email'];
 			$message = $_POST['message'];
-			mysql_connect("localhost", "root", "");
-			mysql_select_db("EMAIL");
-			$req = mysql_query("SELECT * FROM EMAILS");
-			echo json_encode($req);
-			mysql_query("INSERT INTO EMAILS VALUES($nom);");
-			mysql_close();
-
-			/**$entete = 'From: '.$_POST['email']."\r\n".
-			'Reply-To: '.$_POST['email']."\r\n".
-			'X-Mailer: PHP/'.phpversion();
-			mail("ghislain.dugat@free.fr", "sujet", "message");**/
-			//mail("ghislain.dugat@free.fr", $sujet, $message, $entete );
+			$IP = $_SERVER["REMOTE_ADDR"];
+			$connection = mysqli_connect("localhost", "root", "", "EMAIL");
+			$req_pre = mysqli_prepare($connection, 'INSERT INTO EMAILS (nom, email, messages, IP) VALUES ( ?, ?, ?, ?)');
+			mysqli_stmt_bind_param($req_pre, "ssss", $nom, $email, $message, $IP);
+			$reponse = mysqli_stmt_execute($req_pre);
+			$message_mail = "nom : " . $nom . " email : " . $email . " message : " . $message . " IP : " . $IP;
+			mail("ghislain.dugat@free.fr", $sujet, $message_mail);
 		}
 		else
 		{
@@ -83,6 +77,6 @@
 	require_once 'JSON.php';
 	$json = new Services_JSON;
 	return $json->encode($content);
-	}
-**/
+	}**/
+
 ?>
